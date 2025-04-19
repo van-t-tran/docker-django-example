@@ -11,7 +11,12 @@ def api_home(request):
 
     # Convert raw query results to a list of dictionaries
     books_list = [
-        {"id": book.id, "title": book.title, "author": book.author, "published_date": book.published_date}
+        {
+            "id": book.id,
+            "title": book.title,
+            "author": book.author,
+            "published_date": book.published_date,
+        }
         for book in books
     ]
     return Response({"books": books_list})
