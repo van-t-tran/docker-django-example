@@ -21,4 +21,12 @@ dependencies = [
 line-length = 79
 
 [tool.ruff.lint]
-extend-select = ["I", "SIM"]
+extend-select = [
+  "I", # format import statements
+  "B", # bugbear
+  "S", # bandit
+]
+ignore = [
+  "B904", # `raise ... from err` # TODO probably should fix our code
+  "S113", # `requests` call without timeout
+]
